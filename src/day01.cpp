@@ -10,29 +10,15 @@
 namespace {
 
 void replaceWordToNumberEquivalent(std::string &in) {
-  std::regex numbersRegex("(one|two|three|four|five|six|seven|eight|nine)");
-  for (std::smatch sm; regex_search(in, sm, numbersRegex);) {
-    std::string s = sm.str();
-    if (s == "one") {
-      in = std::regex_replace(in, std::regex("one"), "o1e");
-    } else if (s == "two") {
-      in = std::regex_replace(in, std::regex("two"), "t2o");
-    } else if (s == "three") {
-      in = std::regex_replace(in, std::regex("three"), "t3e");
-    } else if (s == "four") {
-      in = std::regex_replace(in, std::regex("four"), "f4r");
-    } else if (s == "five") {
-      in = std::regex_replace(in, std::regex("five"), "f5e");
-    } else if (s == "six") {
-      in = std::regex_replace(in, std::regex("six"), "s6x");
-    } else if (s == "seven") {
-      in = std::regex_replace(in, std::regex("seven"), "s7n");
-    } else if (s == "eight") {
-      in = std::regex_replace(in, std::regex("eight"), "e8t");
-    } else if (s == "nine") {
-      in = std::regex_replace(in, std::regex("nine"), "n9e");
-    }
-  }
+  in = std::regex_replace(in, std::regex("one"), "o1e");
+  in = std::regex_replace(in, std::regex("two"), "t2o");
+  in = std::regex_replace(in, std::regex("three"), "t3e");
+  in = std::regex_replace(in, std::regex("four"), "f4r");
+  in = std::regex_replace(in, std::regex("five"), "f5e");
+  in = std::regex_replace(in, std::regex("six"), "s6x");
+  in = std::regex_replace(in, std::regex("seven"), "s7n");
+  in = std::regex_replace(in, std::regex("eight"), "e8t");
+  in = std::regex_replace(in, std::regex("nine"), "n9e");
 }
 
 void sumUp(const std::string &l, int &sum) {

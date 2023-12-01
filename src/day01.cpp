@@ -9,7 +9,7 @@
 
 namespace {
 
-std::string replaceWordToNumberEquivalent(std::string in) {
+void replaceWordToNumberEquivalent(std::string &in) {
   std::regex numbersRegex("(one|two|three|four|five|six|seven|eight|nine)");
   for (std::smatch sm; regex_search(in, sm, numbersRegex);) {
     std::string s = sm.str();
@@ -33,7 +33,6 @@ std::string replaceWordToNumberEquivalent(std::string in) {
       in = std::regex_replace(in, std::regex("nine"), "n9e");
     }
   }
-  return in;
 }
 
 void sumUp(const std::string &l, int &sum) {
@@ -72,7 +71,8 @@ void day01::part2() {
   std::ifstream f("../inputs/01a.txt");
   std::string l;
   while (std::getline(f, l)) {
-    sumUp(replaceWordToNumberEquivalent(l), sum);
+    replaceWordToNumberEquivalent(l);
+    sumUp(l, sum);
   }
   std::cout << sum << std::endl;
 }

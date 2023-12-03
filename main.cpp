@@ -1,5 +1,6 @@
 #include "src/day01.h"
 #include "src/day02.h"
+#include "src/day03.h"
 
 #include <chrono>
 #include <iostream>
@@ -14,7 +15,9 @@ int main() {
   // day01::part1();
   // day01::part2();
   // day02::part1();
-  day02::part2();
+  // day02::part2();
+  // day03::part1();
+  day03::part2();
 
   auto endTime = high_resolution_clock::now();
 

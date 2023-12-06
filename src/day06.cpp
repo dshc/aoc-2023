@@ -82,16 +82,15 @@ void day06part2() {
     }
   }
 
-  vector<int> results(static_cast<int>(times.size()));
+  ll result = 0;
 
   for (int i = 0; i < times.size(); ++i) {
     for (ll timeHeld = 0; timeHeld <= times[i]; ++timeHeld) {
       if ((timeHeld * (times[i] - timeHeld)) > records[i]) {
-        ++results[i];
+        ++result;
       }
     }
   }
 
-  cout << "part1: "
-       << accumulate(results.begin(), results.end(), 1, multiplies<>()) << endl;
+  cout << "part2: " << result << endl;
 }

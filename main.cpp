@@ -6,6 +6,8 @@
 #include <chrono>
 #include <iostream>
 
+void day05();
+
 int main() {
   using std::chrono::duration_cast;
   using std::chrono::high_resolution_clock;
@@ -19,7 +21,8 @@ int main() {
   // day02::part2();
   // day03::part1();
   // day03::part2();
-  day04::exec();
+  // day04::exec();
+  day05();
 
   auto endTime = high_resolution_clock::now();
 

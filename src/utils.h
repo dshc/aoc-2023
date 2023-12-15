@@ -1,10 +1,24 @@
 #ifndef UTILS
 #define UTILS
 
+#include <sstream>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace utils {
+
+inline std::vector<int> split(const std::string &l) {
+  std::vector<int> history;
+  std::istringstream ss{l};
+  int x;
+  ss >> x;
+  while (ss) {
+    history.emplace_back(x);
+    ss >> x;
+  }
+  return history;
+}
 
 // trim from start (in place)
 inline void ltrim(std::string &s) {

@@ -20,6 +20,15 @@ inline std::vector<int> split(const std::string &l) {
   return history;
 }
 
+inline std::vector<std::string> split(const std::string &l, char delim) {
+  std::vector<std::string> res;
+  std::istringstream ss{l};
+  std::string s;
+  while (std::getline(ss, s, delim))
+    res.emplace_back(s);
+  return res;
+}
+
 // trim from start (in place)
 inline void ltrim(std::string &s) {
   s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {

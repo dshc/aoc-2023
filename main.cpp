@@ -19,6 +19,8 @@ void day09part2();
 void day10part1();
 void day11();
 
+void day15();
+
 int main() {
   using std::chrono::duration_cast;
   using std::chrono::high_resolution_clock;
@@ -43,7 +45,9 @@ int main() {
   // day09part1();
   // day09part2();
   // day10part1();
-  day11();
+  // day11();
+
+  day15();
 
   auto endTime = high_resolution_clock::now();
 

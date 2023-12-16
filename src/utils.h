@@ -1,12 +1,25 @@
 #ifndef UTILS
 #define UTILS
 
+#include <fstream>
 #include <sstream>
 #include <string>
 #include <utility>
 #include <vector>
 
 namespace utils {
+
+inline std::vector<std::vector<char>> parseIntoVecVec(const std::string &f) {
+  std::vector<std::vector<char>> map;
+  std::ifstream ff(f);
+  for (std::string l; std::getline(ff, l);) {
+    auto &row = map.emplace_back();
+    for (auto c : l) {
+      row.emplace_back(c);
+    }
+  }
+  return map;
+}
 
 inline std::vector<int> split(const std::string &l) {
   std::vector<int> history;

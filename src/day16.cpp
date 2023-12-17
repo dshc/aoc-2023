@@ -7,6 +7,7 @@
 
 using namespace std;
 
+namespace {
 enum Dir { NORTH, SOUTH, EAST, WEST };
 
 using Coord = pair<int, int>;
@@ -20,6 +21,7 @@ Coord move(const Coord &loc, Dir dir) {
   auto &toAdd = dirToMovement[dir];
   return {loc.first + toAdd.first, loc.second + toAdd.second};
 }
+} // namespace
 
 void navigate(Memo &memo, set<Coord> &energized, const Grid &grid,
               const Coord &loc, Dir dir) {
@@ -111,7 +113,7 @@ void navigate(Memo &memo, set<Coord> &energized, const Grid &grid,
 }
 
 void day16() {
-  Grid grid = utils::parseIntoVecVec("../inputs/16a.txt");
+  Grid grid = utils::parseIntoVecVec<char>("../inputs/16a.txt");
 
   Coord start{0, 0};
   Dir dir = EAST;
@@ -152,7 +154,7 @@ void day16() {
     if (energized.size() > max)
       max = energized.size();
   }
-  
+
   // start from right
   for (int x = 0; x < grid.size(); ++x) {
     start = make_pair(grid.size() - 1, x);

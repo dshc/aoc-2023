@@ -9,8 +9,21 @@
 
 namespace utils {
 
-inline std::vector<std::vector<char>> parseIntoVecVec(const std::string &f) {
-  std::vector<std::vector<char>> map;
+inline std::vector<std::vector<int>> parseIntoIntVecVec(const std::string &f) {
+  std::vector<std::vector<int>> map;
+  std::ifstream ff(f);
+  for (std::string l; std::getline(ff, l);) {
+    auto &row = map.emplace_back();
+    for (auto c : l) {
+      row.emplace_back(c - '0');
+    }
+  }
+  return map;
+}
+
+template <typename T>
+inline std::vector<std::vector<T>> parseIntoVecVec(const std::string &f) {
+  std::vector<std::vector<T>> map;
   std::ifstream ff(f);
   for (std::string l; std::getline(ff, l);) {
     auto &row = map.emplace_back();

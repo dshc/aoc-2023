@@ -21,6 +21,7 @@ void day11();
 
 void day15();
 void day16();
+void day17();
 
 int main() {
   using std::chrono::duration_cast;
@@ -49,7 +50,8 @@ int main() {
   // day11();
 
   // day15();
-  day16();
+  // day16();
+  day17(); // todo - messy solution. come back to optimize
 
   auto endTime = high_resolution_clock::now();
 
